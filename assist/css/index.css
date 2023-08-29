@@ -1,0 +1,136 @@
+nav{
+    height: 3rem;
+    width: 100%;
+    background: linear-gradient(90deg, #dadada, #1c8cf4, #af456a, #dadada);
+    background: url(../images/background/nav_background.jpg);
+    position: fixed;
+    display: flex;
+    z-index: 5;
+    &:before{
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #ffffff69;
+    }
+}
+
+.title{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    position: relative;
+    top: calc(50% - 1.7rem);
+}
+
+.title img{
+    height: 5rem;
+    width: 6rem;
+    right: 0.5rem;
+    z-index: 3;
+    filter: contrast(00) brightness(100);
+    mix-blend-mode: screen;
+    transition: filter 0.25s ease-in-out;
+    cursor: pointer;
+}
+.title div{
+    height: 100%;
+    width: 5rem;
+    overflow: hidden;
+}
+.title div:hover img{
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+.title h1{
+    position: absolute;
+    left: 3.8rem;
+    top: calc(50% - 1.1ch);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+nav ul{
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    opacity: 1;
+}
+
+nav ul li{
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    transition: color 0.35s ease-in-out;
+    color: #fff;
+    position: relative;
+}
+nav ul li a{
+    transition: color 0.35s ease-in-out;
+    color: #fff;
+}
+
+nav ul li:hover,
+nav ul li a:hover{
+    color: #0e49ec;
+}
+nav ul > li:hover{
+    top: 0.25rem;
+}
+nav ul ul{
+    position: absolute;
+    display: block;
+    background: #0e49ec;
+    height: fit-content;
+    width: 10rem;
+    top: 100%;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+@keyframes top{
+    from{
+        height: 0px;
+    }
+    to{
+        height: calc(2rem * 4.5);
+    }
+}
+
+nav ul:hover li:nth-child(2) ul{
+    height: calc(2rem * 4.5);
+    animation: top 0.5s ease-in;
+    opacity: 1;
+}
+
+nav ul ul li{
+    height: 2rem;
+}
+
+nav ul li i{
+    color: #fff;
+    position: relative;
+    top: 3px;
+}
+nav ul li:hover i{
+    transform: rotate(180deg);
+}
+nav ~ img{
+    z-index: 2;
+    height: 110vh;
+    width: 100vw;
+}
