@@ -74,21 +74,23 @@ nav ul{
     margin: auto;
     display: flex;
     opacity: 1;
+    z-index: 5;
 }
 
 nav ul li{
-    height: fit-content;
+    height: 100%;
     width: fit-content;
     margin: auto;
     text-align: center;
     font-weight: 700;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
     letter-spacing: 1px;
     cursor: pointer;
     border-radius: 0.2rem;
     transition: color 0.35s ease-in-out;
     color: #fff;
     position: relative;
+    line-height: 3rem;
 }
 nav ul li a{
     transition: color 0.35s ease-in-out;
@@ -99,17 +101,15 @@ nav ul li:hover,
 nav ul li a:hover{
     color: #0e49ec;
 }
-nav ul > li:hover{
-    top: 0.25rem;
-}
-nav ul ul{
+nav ul li > ul{
     position: absolute;
     display: block;
     background: #0e49ec;
     height: fit-content;
     width: 10rem;
-    top: 100%;
-    z-index: 1;
+    transform: translateY(-20%);
+    right: -1rem;
+    z-index: 2;
     overflow: hidden;
     opacity: 0;
     transition: opacity 0.5s ease-in;
@@ -124,14 +124,15 @@ nav ul ul{
     }
 }
 
-nav ul:hover li:nth-child(2) ul{
-    height: calc(2rem * 4.5);
+nav ul li:nth-child(3):hover > ul,
+nav ul li:nth-child(2):hover > ul{
+    height: calc(3rem * 3.1);
     animation: top 0.5s ease-in;
     opacity: 1;
 }
 
 nav ul ul li{
-    height: 2rem;
+    height: 3rem;
 }
 
 nav ul li i{
@@ -160,5 +161,5 @@ main{
 main div{
     height: 100vh;
     width: 100vw;
-    background: #0e49ec;
+    background: #6ceaa7;
 }
